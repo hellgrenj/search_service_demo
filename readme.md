@@ -42,7 +42,7 @@ step 8) browse to [localhost:8080](http://localhost:8080) and try the simple Vue
 
 
 
-**DISCLAIMER:** This is off course just a simplified-getting-started-demo application. This should not be used AS IS in production. Besides the official docs for these tools i recommend reading
+**DISCLAIMER:** This is off course just a simplified getting-started-demo application. This should not be used AS IS in production. Besides the official docs for these tools i recommend reading
 [this blog post](https://www.compose.com/articles/transporters-namespace-aware-data-transfer/)
 and
 [this compose/transporter issue](https://github.com/compose/transporter/issues/191)
