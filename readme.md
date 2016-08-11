@@ -3,7 +3,10 @@
 This is a simplified example demonstrating how to quickly get up and running with a full text search solution for your **[mongodb](https://www.mongodb.com/)** driven
 application using **[node.js](https://nodejs.org)**, **[docker](https://www.docker.com/)**, **[elasticsearch](https://www.elastic.co/products/elasticsearch)** and **[compose/transporter](https://github.com/compose/transporter)**.
 
-Related blog post: *insert link here*
+### Related blog post:
+
+[A fast track to full text search for your mongodb driven app  
+ utilizing elasticsearch, docker and transporter.](http://hellgrenj.tumblr.com/post/148795030888/a-fast-track-to-full-text-search-for-your-mongodb)
 
 ### Prerequisites
 * have node.js installed
