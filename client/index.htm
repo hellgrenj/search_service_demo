@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; text-align:center;">
+    <h1>Simple Vue.js Client</h1>
+    <div class="search container" id="app" style="margin-top:20px;">
+
+        <input id="searchbox" v-model="searchQuery" v-on:keyup.enter="search" placeholder="ENTER SEARCH WORD">
+        <button v-on:click="search">SEARCH</button>
+        <button v-on:click="clear">CLEAR</button>
+        <br/>
+        <br/>
+        <div>{!!info!!}</div>
+        <div v-for="hit in hits" style="text-align:left">
+            <p>
+                <div style="background-color:#df69ff; padding:10px; margin-left:50px; margin-right:50px;"> ${hit} </div>
+            </p>
+
+        </div>
+    </div>
+
+    <script>
+        Vue.config.delimiters = ['${', '}'];
+        Vue.config.unsafeDelimiters = ['{!!', '!!}'];
+        var viewModel = new Vue({
+            el: '#app',
+            data: {
+                query: '',
+                searchQuery: '',
+                hits: [],
+                info: ''
+            },
+            methods: {
+                search: function() {
+                    var query = this.searchQuery.trim();
+                    if (query) {
+                        viewModel.query = query;
+                        $.get("/" + query, function(data) {
+                            if (data.hits.length > 0) {
+                                var hitsAsStrings = data.hits.map(function(hit) {
+                                    return JSON.stringify(hit);
+                                });
+                                viewModel.hits = hitsAsStrings;
+                                viewModel.info = '';
+                            } else {
+                                viewModel.info = '<strong>' + viewModel.query + '</strong> resulted in 0 hits';
+                                viewModel.hits = [];
+                            }
+
+                        });
+                    } else {
+                        viewModel.info = 'please enter a word';
+                        viewModel.hits = [];
+                    }
+                },
+                clear: function() {
+                    viewModel.hits = [];
+                    viewModel.searchQuery = '';
+                    viewModel.info = '';
+                }
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

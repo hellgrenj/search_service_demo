@@ -1,0 +1,17 @@
+{
+  "name": "search_service_demo",
+  "version": "1.0.0",
+  "description": "This is a simplified example demonstrating how to quickly get up and running with a full text search solution....",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Johan Hellgren <hellgrenj@gmail.com> (johanhellgren.se)",
+  "license": "MIT",
+  "dependencies": {
+    "elasticsearch": "11.0.1",
+    "express": "4.14.0",
+    "shelljs": "0.7.3"
+  }
+}
