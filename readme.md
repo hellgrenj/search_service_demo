@@ -22,8 +22,8 @@ Step 3) run an elasticsearch docker container: <code>  docker run -d -p 9200:920
 
 Step 4) pull down the [dortort/transporter docker image](https://hub.docker.com/r/dortort/transporter/): <code> docker pull dortort/transporter:es-v2.x-compat</code>
 
-Step 5) clone your preferred collection of content from mongodb to elasticsearch by executing the transport.js script found in the utils folder:  
-*(make sure to replace the placeholders with your real stuff)*  
+Step 5) clone your preferred collection of content from mongodb to elasticsearch by executing the transport.js script found in the utils folder:  *(make sure to replace the placeholders with your real stuff)*  
+
 <code>
 node utils/transport.js MONGODB_HOST_IP DB_NAME COLLECTION_NAME MONGODB_PORT
 </code>    
@@ -39,8 +39,7 @@ step 8) browse to [localhost:8080](http://localhost:8080) and try the simple Vue
 
 
 
-**DISCLAIMER:** This is off course just a simplified-getting-started-demo application. This should not be used AS IS in production.  
-Besides the official docs for these tools i recommend reading
+**DISCLAIMER:** This is off course just a simplified-getting-started-demo application. This should not be used AS IS in production. Besides the official docs for these tools i recommend reading
 [this blog post](https://www.compose.com/articles/transporters-namespace-aware-data-transfer/)
 and
 [this compose/transporter issue](https://github.com/compose/transporter/issues/191)
